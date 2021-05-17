@@ -249,7 +249,7 @@ localhost 以外の場合は、[runhost.sh](./Python/runhost.sh) 実行前に [h
 した表示で確認できます。
 
 ```
-~/IRIS-NativeAPI-Python-Template/Python$./runhost.sh
+~/IRIS-NativeAPI-Python-Template/Python$ ./runhost.sh
 Armin - エレンの幼馴染
 （アルミン）
   関係者： Bertolt
@@ -258,15 +258,14 @@ Armin - エレンの幼馴染
 Bertolt - 超大型の巨人
 （ベルトルト）
   関係者： Reiner
-    ＜省略＞
-
+  ＜省略＞
 ******************************
 Leviに関連する人物を探します
 ******************************
------------------------
- ** completed !! **
------------------------
-~/IRIS-NativeAPI-Python-Template/Python$
+----------------------
+** 処理終了しました **
+----------------------
+~IRIS-NativeAPI-Python-Template/Python$
 ```
 
 
