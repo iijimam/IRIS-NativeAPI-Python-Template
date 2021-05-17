@@ -110,8 +110,7 @@ Native API は、IRIS 内部のネイティブデータ（＝グローバル変�
 Docker、docker-compose、git が利用できる環境でお試しください。
 
 **使用するコンテナのイメージ**
-![](https://github.com/iijimam/doc-images/blob/master2/IRIS-NativeAPI-Template/conatiner-python.gif)
-
+![](https://github.com/iijimam/doc-images2/blob/master/IRIS-NativeAPI-Template/conatiner-python.gif)
 グラフ構造の確認には、Python の [networkx](https://networkx.org/) を使用しています。
 
 また、データ登録後 [Cytoscape.js](https://js.cytoscape.org/) を利用した HTML でも人物相関を視覚的に確認できるようにしています。
@@ -184,7 +183,7 @@ git clone https://github.com/Intersystems-jp/IRIS-NativeAPI-Python-Template.git
     その後、特定の登場人物の関係者を networkx を使用して表示します。
 
     **実行例（Jupyter）**
-    ![](https://github.com/iijimam/doc-images2/blob/master/IRIS-NativeAPI-Template/conatiner-python.gif)
+    ![](https://github.com/iijimam/doc-images2/blob/master/IRIS-NativeAPI-Template/Jupyter.gif)
 
    
 4) コンテナを停止する方法
