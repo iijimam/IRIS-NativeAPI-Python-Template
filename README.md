@@ -200,12 +200,12 @@ git clone https://github.com/Intersystems-jp/IRIS-NativeAPI-Python-Template.git
     docker-compose down
     ```
 
-5) コンテナのビルド（Python のモジュールのインストールを追加したい場合は、コンテナのビルドを行います）
+5) Python 用コンテナのリビルド
 
-    インストールしたいモジュール名を [requirements.txt](./Python/requirements.txt) に追記し（pip install 〇△ のモジュール名〇△ のみを追記してください。）
+    ※ 追加の Python モジュールをインストールしたい場合にコンテナのリビルドを行ってください）
+
+    インストールしたいモジュール名を [requirements.txt](./Python/requirements.txt) に追記し（pip install 〇△ のモジュール名〇△ のみを追記してください。）以下実行します。
     
-    コンテナのビルドは、以下の通りです。
-
     ```
     docker-compose build jupyter
     ```
@@ -215,7 +215,7 @@ git clone https://github.com/Intersystems-jp/IRIS-NativeAPI-Python-Template.git
 
 ホストに、Python 3 がインストールされている状態でお試し下さい。
 
-ソースコードは、[Python/TryNativeAPI-host.py](./Python/TryNativeAPI-host.py) にあります。
+ソースコードは、[TryNativeAPI-host.py](./Python/TryNativeAPI-host.py) にあります。
 
 Python の 接続先 IRIS はコンテナの IRIS を使用しています。
 
@@ -244,13 +244,30 @@ IRISHOSTNAME="localhost"
 localhost 以外の場合は、[runhost.sh](./Python/runhost.sh) 実行前に [host-params.sh](./Python/host-params.sh) の以下行を環境に合わせて変更してください。
 
 
-実行例）
+[runhost.sh](./Python/runhost.sh) 実行例）
 
 データ登録後、登場人物の全関係者を文字で出力します。その後、特定の登場人物の関係者を networkx を使用
 した表示で確認できます。
 
 ```
 ~/IRIS-NativeAPI-Python-Template/Python$./runhost.sh
+Armin - エレンの幼馴染
+（アルミン）
+  関係者： Bertolt
+  関係者： Eren
+  関係者： Mikasa
+Bertolt - 超大型の巨人
+（ベルトルト）
+  関係者： Reiner
+    ＜省略＞
+
+******************************
+Leviに関連する人物を探します
+******************************
+-----------------------
+ ** completed !! **
+-----------------------
+~/IRIS-NativeAPI-Python-Template/Python$
 ```
 
 
@@ -279,13 +296,34 @@ SET IRISHOSTNAME=localhost
 localhost 以外の場合は、[runhost.bat](./Python/runhost.bat) 実行前に [host-params.bat](./Python/host-params.bat) の以下行を環境に合わせて変更してください。
 
 
-実行例）
+[runhost.bat](./Python/runhost.bat) 実行例）
 
 データ登録後、登場人物の全関係者を文字で出力します。その後、特定の登場人物の関係者を networkx を使用
 した表示で確認できます。
 
 ```
-~/IRIS-NativeAPI-Python-Template/Python$ runhost.bat
+~/IRIS-NativeAPI-Python-Template/Python> runhost.bat
+Armin - エレンの幼馴染
+（アルミン）
+  関係者： Bertolt
+  関係者： Eren
+  関係者： Mikasa
+Bertolt - 超大型の巨人
+（ベルトルト）
+  関係者： Reiner
+    ＜省略＞
+
+******************************
+Leviに関連する人物を探します
+******************************
+-----------------------
+ ** completed !! **
+-----------------------
+
+>
 ```
+
+（「completed !!」の表示の前に networkx による表示画面がポップアップされます。)
+
 
 **READY SET CODE!!**
