@@ -1,7 +1,7 @@
 #!/bin/bash
 
-pip3 matplotlib
-pip3 networkx
+pip3 install matplotlib
+pip3 install networkx
 
 rm -rf wheel
 

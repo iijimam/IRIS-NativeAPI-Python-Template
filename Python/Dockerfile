@@ -8,7 +8,6 @@ RUN apt-get update && apt-get install -y fonts-takao-gothic
 #RUN apt-get update && apt-get install -y default-jre-headless && apt-get clean && rm -rf /var/lib/apt/lists/
 
 WORKDIR /irislib
-
 COPY requirements.txt .
 
 # whlをインストール
