@@ -13,3 +13,5 @@ pip3 install wheel/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl
 sudo apt-get update
 sudo sudo apt install fontconfig
 sudo apt-get install -y fonts-ipaexfont
+# fontList.cache を削除
+rm ${PWD}/.cache/matplotlib/fontList.cache
