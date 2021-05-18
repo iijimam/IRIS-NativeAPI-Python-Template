@@ -1,3 +1,6 @@
+#!/usr/local/bin/python
+# coding:utf-8
+
 #InterSystems IRIS の Python Native APIを使ってみよう
 ######################################
 #[1] irisnative パッケージのインポート
@@ -10,7 +13,9 @@
 import irisnative
 import networkx as nx
 import matplotlib.pyplot as plt
+
 import os
+
 G=nx.DiGraph()
 
 def getCorrelation(source,graph,count):
@@ -33,6 +38,8 @@ def getCorrelation(source,graph,count):
 
 
 #[2]IRISに接続＋IRISオブジェクトの作成
+
+# 接続ホスト名を環境変数から取得。ない場合は localhost
 host=os.environ.get('IRISHOSTNAME')
 
 if host ==None:
@@ -92,9 +99,17 @@ labellist={}
 #関係者を取得
 getCorrelation("Levi",G,1)
 
-nx.draw(G, labels=labellist,font_family='MS Gothic',font_size=10,
-            node_color="lightblue",edge_color="lightblue",node_size=2000)
-plt.show()
+# 環境変数からフォントを取得
+samplefont=os.environ.get('SAMPLEFONT')
+if host ==None:
+    host = "TakaoPGothic"
 
+# IPAexフォントを使う場合（事前にインストールが必要）
+#nx.draw(G, labels=labellist,font_family='IPAexGothic',font_size=10,
+nx.draw(G, labels=labellist,font_family=samplefont,font_size=10,
+            node_color="lightblue",edge_color="lightblue",node_size=2000)
+
+plt.savefig("sample1.jpg")
+print("\nnetworkxの表示を sample1.jpg　に出力しました")
 #接続終了
 connection.close()

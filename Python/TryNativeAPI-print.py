@@ -1,3 +1,6 @@
+#!/usr/local/bin/python
+# coding:utf-8
+
 #InterSystems IRIS の Python Native APIを使ってみよう
 ######################################
 #[1] irisnative パッケージのインポート
