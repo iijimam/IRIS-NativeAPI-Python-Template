@@ -292,7 +292,7 @@ networkxの表示を sample1.jpg　に出力しました
 
 ```
 ~/IRIS-NativeAPI-Python-Template> cd Python
-~/IRIS-NativeAPI-Python-Template/Python> ./pipinstall-linux.sh
+~/IRIS-NativeAPI-Python-Template/Python> pipinstall.bat
 ```
 
 Python の実行には、[runhost.bat](./Python/runhost.bat) を使用します。
