@@ -218,6 +218,15 @@ git clone https://github.com/Intersystems-jp/IRIS-NativeAPI-Python-Template.git
 
 Python の 接続先 IRIS はコンテナの IRIS を使用しています。
 
+IRIS の接続情報としてホスト名の指定があり、デフォルトは **localhost** が指定されていますが、実行環境に合わせて変更できるようにしています。
+
+詳しくは [4-1) Linuxの場合](#4-1-linux%E3%81%AE%E5%A0%B4%E5%90%88)
+ または [4-2) Windowsの場合](#4-2-windows-%E3%81%AE%E5%A0%B4%E5%90%88) ご参照ください。
+
+サンプル実行結果として、以下のようなファイル（sample1.jpg）を出力します。実行後ご確認ください。
+![](https://github.com/iijimam/doc-images2/blob/master/IRIS-NativeAPI-Template/sample1.jpg)
+
+
 ### 4-1) Linuxの場合
 
 最初に、サンプルコードで使用しているモジュール（networkx、matplotlib、irisnative）をインストールするため、[pipinstall-linux.sh](./Python/pipinstall-linux.sh) を実行します。
@@ -229,7 +238,7 @@ Python の 接続先 IRIS はコンテナの IRIS を使用しています。
 
 Python の実行には、[runhost.sh](./Python/runhost.sh) を使用します。
 
-≪実行前にホスト名を確認してください≫
+**≪実行前にホスト名を確認してください≫**
 
 Python から IRIS へ接続するときのホスト名に **localhost** を指定しています。
 
@@ -240,13 +249,21 @@ IRISHOSTNAME="localhost"
 ```
 
 
-localhost 以外の場合は、[runhost.sh](./Python/runhost.sh) 実行前に [host-params.sh](./Python/host-params.sh) の以下行を環境に合わせて変更してください。
+localhost 以外の場合は、[runhost.sh](./Python/runhost.sh) を実行する前に [host-params.sh](./Python/host-params.sh) を環境に合わせて変更してください。
 
+またサンプルでは、日本語表示を行うため、フォントに **TakaoPGothic** を指定しています。
+他のフォントを指定する場合は、[host-params.sh](./Python/host-params.sh) の以下の行を修正してください。
 
-[runhost.sh](./Python/runhost.sh) 実行例）
+```
+SAMPLEFONT="TakaoPGothic"
+```
+
+事前準備ができたら、[runhost.sh](./Python/runhost.sh) を実行します。
+
+ 実行例）
 
 データ登録後、登場人物の全関係者を文字で出力します。その後、特定の登場人物の関係者を networkx を使用
-した表示で確認できます。
+した表示で確認できます（ファイル出力します）。
 
 ```
 ~/IRIS-NativeAPI-Python-Template/Python$ ./runhost.sh
@@ -262,6 +279,8 @@ Bertolt - 超大型の巨人
 ******************************
 Leviに関連する人物を探します
 ******************************
+
+networkxの表示を sample1.jpg　に出力しました
 ----------------------
 ** 処理終了しました **
 ----------------------
@@ -280,7 +299,7 @@ Leviに関連する人物を探します
 
 Python の実行には、[runhost.bat](./Python/runhost.bat) を使用します。
 
-≪実行前にホスト名を確認してください≫
+**≪実行前にホスト名を確認してください≫**
 
 Python から IRIS へ接続するときのホスト名に **localhost** を指定しています。
 
@@ -290,14 +309,22 @@ Python から IRIS へ接続するときのホスト名に **localhost** を指�
 SET IRISHOSTNAME=localhost
 ```
 
+localhost 以外の場合は、[runhost.bat](./Python/runhost.bat) を実行する前に [host-params.bat](./Python/host-params.bat) の以下行を環境に合わせて変更してください。
 
-localhost 以外の場合は、[runhost.bat](./Python/runhost.bat) 実行前に [host-params.bat](./Python/host-params.bat) の以下行を環境に合わせて変更してください。
+またサンプルでは、日本語表示を行うため、フォントに **MS Gothic** を指定しています。
+他のフォントを指定する場合は、[host-params.bat](./Python/host-params.bat) の以下の行を修正してください。
 
+```
+SET SAMPLEFONT=MS Gothic
+```
 
-[runhost.bat](./Python/runhost.bat) 実行例）
+事前準備ができたら、[runhost.bat](./Python/runhost.sh) を実行します。
+[runhost.bat]
+
+実行例）
 
 データ登録後、登場人物の全関係者を文字で出力します。その後、特定の登場人物の関係者を networkx を使用
-した表示で確認できます。
+した表示で確認できます（ファイル出力します）。
 
 ```
 ~/IRIS-NativeAPI-Python-Template/Python> runhost.bat
@@ -314,14 +341,14 @@ Bertolt - 超大型の巨人
 ******************************
 Leviに関連する人物を探します
 ******************************
+
+networkxの表示を sample1.jpg　に出力しました
 -----------------------
  ** completed !! **
 -----------------------
 
 >
 ```
-
-（「completed !!」の表示の前に networkx による表示画面がポップアップされます。)
 
 
 **READY SET CODE!!**
