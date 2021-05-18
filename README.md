@@ -130,7 +130,7 @@ HTML で特定の登場人物の関係者を探す場合は、クエリ文字列
 サンプル実行までの手順は以下の通りです。
 
 - [3-1) ダウンロード (git clone)](#3-1-%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89-git-clone)
-- [3-2) Python 用コンテナを使う場合](#3-2-Python 用コンテナを使う場合)
+- [3-2) Python 用コンテナを使う場合](#3-2-Python-用コンテナを使う場合)
 
 Python の実行をコンテナではなくてホストで行う場合は、以下手順をご参照ください。
 - [4-1) Linuxの場合](#4-1-linux%E3%81%AE%E5%A0%B4%E5%90%88)
@@ -244,12 +244,11 @@ Python から IRIS へ接続するときのホスト名に **localhost** を指�
 
 実行環境に合わせてホスト名を変更できるように、[host-params.sh](./Python/host-params.sh) にホスト名を指定し、環境変数に設定しています。
 
+localhost 以外の場合は、[runhost.sh](./Python/runhost.sh) を実行する前に [host-params.sh](./Python/host-params.sh) の以下の行を環境に合わせて変更してください。
+
 ```
 IRISHOSTNAME="localhost"
 ```
-
-
-localhost 以外の場合は、[runhost.sh](./Python/runhost.sh) を実行する前に [host-params.sh](./Python/host-params.sh) を環境に合わせて変更してください。
 
 またサンプルでは、日本語表示を行うため、フォントに **TakaoPGothic** を指定しています。
 他のフォントを指定する場合は、[host-params.sh](./Python/host-params.sh) の以下の行を修正してください。
@@ -260,8 +259,7 @@ SAMPLEFONT="TakaoPGothic"
 
 事前準備ができたら、[runhost.sh](./Python/runhost.sh) を実行します。
 
- 実行例）
-
+実行例）
 データ登録後、登場人物の全関係者を文字で出力します。その後、特定の登場人物の関係者を networkx を使用
 した表示で確認できます（ファイル出力します）。
 
@@ -305,11 +303,11 @@ Python から IRIS へ接続するときのホスト名に **localhost** を指�
 
 実行環境に合わせてホスト名を変更できるように、[host-params.bat](./Python/host-params.bat) にホスト名を指定し、環境変数に設定しています。
 
+localhost 以外の場合は、[runhost.bat](./Python/runhost.bat) を実行する前に [host-params.bat](./Python/host-params.bat) の以下行を環境に合わせて変更してください。
+
 ```
 SET IRISHOSTNAME=localhost
 ```
-
-localhost 以外の場合は、[runhost.bat](./Python/runhost.bat) を実行する前に [host-params.bat](./Python/host-params.bat) の以下行を環境に合わせて変更してください。
 
 またサンプルでは、日本語表示を行うため、フォントに **MS Gothic** を指定しています。
 他のフォントを指定する場合は、[host-params.bat](./Python/host-params.bat) の以下の行を修正してください。
@@ -318,11 +316,9 @@ localhost 以外の場合は、[runhost.bat](./Python/runhost.bat) を実行す�
 SET SAMPLEFONT=MS Gothic
 ```
 
-事前準備ができたら、[runhost.bat](./Python/runhost.sh) を実行します。
-[runhost.bat]
+事前準備ができたら、[runhost.bat](./Python/runhost.bat) を実行します。
 
 実行例）
-
 データ登録後、登場人物の全関係者を文字で出力します。その後、特定の登場人物の関係者を networkx を使用
 した表示で確認できます（ファイル出力します）。
 
