@@ -15,4 +15,7 @@ pip3 install wheel/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl
 #sudo apt-get install -y fonts-ipaexfont
 
 # fontList.cache を削除
-rm ${PWD}/.cache/matplotlib/fontList.cache
+echo -e "\nfontList.cacheを削除します（存在しない時は No such file or directory と出ます）"
+CACHEDIR=`python3 -c "import matplotlib as plt; print(plt.get_cachedir())"`
+rm ${CACHEDIR}/fontList.cache
+rm ${CACHEDIR}/fontList.py3k.cache
