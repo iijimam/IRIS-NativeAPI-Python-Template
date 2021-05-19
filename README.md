@@ -63,7 +63,7 @@ set ^Correlation("Mikasa","Eren")=""
 配列のサブスクリプト（括弧の中身）は、配列のノード（例では、第 1 番目と第 2 番目）毎に Unicode 昇順でソートされます。
 
 実行後、管理ポータルなどからグローバル変数一覧を参照すると、実行順に関係なく Unicode 昇順にソートされていることを確認できます。
-> 管理ポータルは、[http://ホスト名:52779/csp/sys/UtilHome.csp](http://localhost:52779/csp/sys/UtilHome.csp) でアクセスできます（ユーザ名：_system　、パスワード：SYS）。
+> 管理ポータルは、[http://localhost:52779/csp/sys/UtilHome.csp](http://localhost:52779/csp/sys/UtilHome.csp) でアクセスできます（ユーザ名：_system　、パスワード：SYS）。
 
 管理ポータル > [システムエクスプローラ] > [グローバル] > 左画面で「ネームスペース」USER を選択 > ^Correlation の「表示」をクリック
 ![](https://github.com/iijimam/doc-images/blob/master/IRIS-NativeAPI-Template/MP-Global.gif)
@@ -115,15 +115,15 @@ Docker、docker-compose、git が利用できる環境でお試しください�
 
 また、データ登録後 [Cytoscape.js](https://js.cytoscape.org/) を利用した HTML でも人物相関を視覚的に確認できるようにしています。
 
-[http://ホスト名:52779/csp/user/graph.html](http://localhost:52779/csp/user/graph.html)
+[http://localhost:52779/csp/user/graph.html](http://localhost:52779/csp/user/graph.html)
 
 > REST 経由でグローバル変数を取得しています。IRIS で作成する REST サーバについてご興味ある方は、ぜひ [こちらの記事](https://jp.community.intersystems.com/node/479546) もご参照ください。
 
 HTML で特定の登場人物の関係者を探す場合は、クエリ文字列に人物名を指定してください（人物名は大小文字を区別します。先頭文字が大文字後は小文字で登録しています）。
 
- - 例1 [http://ホスト名:52779/csp/user/graph.html?Levi](http://localhost:52779/csp/user/graph.html?Levi)
+ - 例1 [http://localhost:52779/csp/user/graph.html?Levi](http://localhost:52779/csp/user/graph.html?Levi)
 
- - 例2 [http://ホスト名:52779/csp/user/graph.html?Armin](http://localhost:52779/csp/user/graph.html?Armin)
+ - 例2 [http://localhost:52779/csp/user/graph.html?Armin](http://localhost:52779/csp/user/graph.html?Armin)
 
 
 
