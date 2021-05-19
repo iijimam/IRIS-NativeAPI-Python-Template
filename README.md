@@ -156,7 +156,7 @@ git clone https://github.com/Intersystems-jp/IRIS-NativeAPI-Python-Template.git
 2) コンテナを開始する方法
 
     ```
-    docker-compose up -d iris
+    docker-compose up -d
     ```
 
     
@@ -167,7 +167,7 @@ git clone https://github.com/Intersystems-jp/IRIS-NativeAPI-Python-Template.git
 
 3) サンプルを動かす方法（Jupyterを利用します）
 
-    http://ホスト名:8896/ にアクセスし、[TryNativeAPI.ipynb](/Python/jupyter-sample/TryNativeAPI.ipynb) を開きます。
+    [http://localhost:8896/](http://localhost:8896/) にアクセスし、[TryNativeAPI.ipynb](/Python/jupyter-sample/TryNativeAPI.ipynb) を開きます。
 
     コードのセルを選択し、Ctrl + Enter で実行するか、Cell > Run All を選択して実行してください。
 
