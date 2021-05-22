@@ -69,7 +69,7 @@ set ^Correlation("Mikasa","Eren")=""
 ![](https://github.com/iijimam/doc-images/blob/master/IRIS-NativeAPI-Template/MP-Global.gif)
 
 
-ここまでのグローバル変数を Java から設定する場合のコードは以下の通りです。コード全体については [TryNativeAPI-host.py](/Python/TryNativeAPI-host.py) をご参照ください。
+ここまでのグローバル変数を Python から設定する場合のコードは以下の通りです。コード全体については [TryNativeAPI-host.py](/Python/TryNativeAPI-host.py) をご参照ください。
 ```
 iris_native.set("主人公（エレン）","Correlation","Eren")
 iris_native.set(None,"Correlation","Eren","Mikasa")
