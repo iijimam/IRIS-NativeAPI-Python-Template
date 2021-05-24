@@ -1,3 +1,4 @@
-./Python/wheel/*.whl
-./Python/jupyter-sample/.ipynb_checkpoints/.*
+Python/wheel/*.whl
+Python/jupyter-sample/.ipynb_checkpoints
+Python/jupyter-sample/.ipynb_checkpoints/
 *.jpg
