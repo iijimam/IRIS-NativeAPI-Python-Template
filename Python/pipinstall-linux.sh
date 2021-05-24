@@ -6,8 +6,8 @@ pip3 install networkx
 
 rm -rf wheel/*.whl
 # NativeAPI用whlファイルのGET（Linux用）
-wget -P wheel https://github.com/intersystems/quickstarts-python/raw/master/Solutions/nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl
-pip3 install wheel/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl
+wget -P wheel https://github.com/iijimam/IRISModules/raw/master/python/wheel/intersystems_irispython-3.2.0-py3-none-any.whl
+pip3 install intersystems_irispython-3.2.0-py3-none-any.whl
 
 # 日本語フォントのインストール（Takaoフォントを利用しています）
 #sudo apt-get update
