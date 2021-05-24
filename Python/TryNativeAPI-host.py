@@ -5,7 +5,7 @@
 ######################################
 #[1] irisnative パッケージのインポート
 #[2] IRISに接続＋IRISオブジェクトの作成
-#[3] ^Correlationの作成
+#[3] ^Relationの作成
 #[4] [3]で設定した値の取得
 ######################################
 
@@ -18,14 +18,14 @@ import os
 
 G=nx.DiGraph()
 
-def getCorrelation(source,graph,count):
+def getRelation(source,graph,count):
     if count>3:
         return
 
     #ラベル表示用のデータ取得
-    labellist[source]=iris_native.get("Correlation",source)
+    labellist[source]=iris_native.get("Relation",source)
 
-    iter = iris_native.iterator("Correlation",source)
+    iter = iris_native.iterator("Relation",source)
     nodelist=[source for source in iter.subscripts() ]
     edgelist=[(source,target) for target in nodelist]
     graph.add_nodes_from(nodelist)
@@ -33,8 +33,8 @@ def getCorrelation(source,graph,count):
 
     for target in nodelist:
         #ラベル表示用のデータ取得
-        labellist[target]=iris_native.get("Correlation",target)
-        getCorrelation(target,graph,count+1)
+        labellist[target]=iris_native.get("Relation",target)
+        getRelation(target,graph,count+1)
 
 
 #[2]IRISに接続＋IRISオブジェクトの作成
@@ -49,45 +49,45 @@ connection = irisnative.createConnection(host,1972,"user","_system","SYS")
 iris_native = irisnative.createIris(connection)
 
 #[3] 登場人物の登録
-#   set ^Correlation("Eren")="主人公（エレン）
-iris_native.set("主人公\n（エレン）","Correlation","Eren")
-iris_native.set("エレンの幼馴染\n（アルミン）","Correlation","Armin")
-iris_native.set("エレンの幼馴染\n（ミカサ）","Correlation","Mikasa")
-iris_native.set("エレンのお父さん\n（グリシャ）","Correlation","Grisha")
-iris_native.set("エレンの異母兄弟\n（ジーク）","Correlation","Zeke")
-iris_native.set("鎧の巨人\n（ライナー）","Correlation","Reiner")
-iris_native.set("超大型の巨人\n（ベルトルト）","Correlation","Bertolt")
-iris_native.set("エレンのお母さん（カルラ）\nダイナに捕食","Correlation","Carla")
-iris_native.set("ジークのお母さん（ダイナ）\nレイス王家[フリッツ家]","Correlation","Dina")
-iris_native.set("人類最強の兵士\n（リヴァイ）","Correlation","Levi")
+#   set ^Relation("Eren")="主人公（エレン）
+iris_native.set("主人公\n（エレン）","Relation","Eren")
+iris_native.set("エレンの幼馴染\n（アルミン）","Relation","Armin")
+iris_native.set("エレンの幼馴染\n（ミカサ）","Relation","Mikasa")
+iris_native.set("エレンのお父さん\n（グリシャ）","Relation","Grisha")
+iris_native.set("エレンの異母兄弟\n（ジーク）","Relation","Zeke")
+iris_native.set("鎧の巨人\n（ライナー）","Relation","Reiner")
+iris_native.set("超大型の巨人\n（ベルトルト）","Relation","Bertolt")
+iris_native.set("エレンのお母さん（カルラ）\nダイナに捕食","Relation","Carla")
+iris_native.set("ジークのお母さん（ダイナ）\nレイス王家[フリッツ家]","Relation","Dina")
+iris_native.set("人類最強の兵士\n（リヴァイ）","Relation","Levi")
 
 #関係性を設定
-#   set ^Correlation("Eren","Mikasa")=""
-iris_native.set(None,"Correlation","Eren","Mikasa")
-iris_native.set(None,"Correlation","Eren","Armin")
-iris_native.set(None,"Correlation","Armin","Mikasa")
-iris_native.set(None,"Correlation","Mikasa","Armin")
-iris_native.set(None,"Correlation","Armin","Eren")
-iris_native.set(None,"Correlation","Mikasa","Eren")
-iris_native.set(None,"Correlation","Grisha","Eren")
-iris_native.set(None,"Correlation","Grisha","Zeke")
-iris_native.set(None,"Correlation","Eren","Zeke")
-iris_native.set(None,"Correlation","Zeke","Eren")
-iris_native.set(None,"Correlation","Grisha","Dina")
-iris_native.set(None,"Correlation","Dina","Grisha")           
-iris_native.set(None,"Correlation","Grisha","Carla")
-iris_native.set(None,"Correlation","Carla","Grisha")
-iris_native.set(None,"Correlation","Dina","Carla")
-iris_native.set(None,"Correlation","Armin","Bertolt")
-iris_native.set(None,"Correlation","Reiner","Bertolt")
-iris_native.set(None,"Correlation","Bertolt","Reiner")
-iris_native.set(None,"Correlation","Levi","Zeke")
+#   set ^Relation("Eren","Mikasa")=""
+iris_native.set(None,"Relation","Eren","Mikasa")
+iris_native.set(None,"Relation","Eren","Armin")
+iris_native.set(None,"Relation","Armin","Mikasa")
+iris_native.set(None,"Relation","Mikasa","Armin")
+iris_native.set(None,"Relation","Armin","Eren")
+iris_native.set(None,"Relation","Mikasa","Eren")
+iris_native.set(None,"Relation","Grisha","Eren")
+iris_native.set(None,"Relation","Grisha","Zeke")
+iris_native.set(None,"Relation","Eren","Zeke")
+iris_native.set(None,"Relation","Zeke","Eren")
+iris_native.set(None,"Relation","Grisha","Dina")
+iris_native.set(None,"Relation","Dina","Grisha")           
+iris_native.set(None,"Relation","Grisha","Carla")
+iris_native.set(None,"Relation","Carla","Grisha")
+iris_native.set(None,"Relation","Dina","Carla")
+iris_native.set(None,"Relation","Armin","Bertolt")
+iris_native.set(None,"Relation","Reiner","Bertolt")
+iris_native.set(None,"Relation","Bertolt","Reiner")
+iris_native.set(None,"Relation","Levi","Zeke")
 
 #[4] 全件取得
-for source,value in iris_native.iterator("Correlation"):
+for source,value in iris_native.iterator("Relation"):
     print(source,"-",value)
 
-    for target,value in iris_native.iterator("Correlation",source):
+    for target,value in iris_native.iterator("Relation",source):
         print("  関係者：",target)
 
 #[5] 登場人物を特定して関係者取得
@@ -97,7 +97,7 @@ print("******************************")
 #ラベル用辞書の初期化
 labellist={}
 #関係者を取得
-getCorrelation("Levi",G,1)
+getRelation("Levi",G,1)
 
 # 環境変数からフォントを取得
 samplefont=os.environ.get('SAMPLEFONT')
