@@ -17,7 +17,6 @@ services:
     environment:
       TZ: JST-9
 
-  # docker-compose run java GPXSamples/Sakurajima.gpx.xml
   jupyter:
     build:
       context: ./Python
